@@ -1,0 +1,15 @@
+package com.citroncode.security.jks;
+
+
+import java.security.Provider;
+import java.security.Security;
+
+public class JKSProvider extends Provider {
+    public JKSProvider() {
+        super("JKS", 1.0, "Java KeyStore");
+        put("KeyStore.JKS", JKS.class.getName());
+        Security.setProperty("keystore.type", "JKS");
+
+    }
+    
+}
